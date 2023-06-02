@@ -90,7 +90,12 @@ class _HomePageState extends State<HomePage> {
             ),
             ListTile(
               onTap: () {
-                nextScreen(context, const ProfilePage());
+                nextScreenReplace(
+                    context,
+                    ProfilePage(
+                      userName: userName,
+                      email: email,
+                    ));
               },
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
@@ -101,7 +106,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               onTap: () async {
                 showDialog(
-                  barrierDismissible: false,
+                    barrierDismissible: false,
                     context: context,
                     builder: (context) {
                       return AlertDialog(
@@ -117,14 +122,18 @@ class _HomePageState extends State<HomePage> {
                                 color: Colors.red,
                               )),
                           IconButton(
-                              onPressed: () async{
+                              onPressed: () async {
                                 await authService.signOut();
-                                Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const LoginPage()), (route) => false);
+                                Navigator.of(context).pushAndRemoveUntil(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LoginPage()),
+                                    (route) => false);
                               },
                               icon: const Icon(
                                 Icons.done,
                                 color: Colors.green,
-                              )), 
+                              )),
                         ],
                       );
                     });
