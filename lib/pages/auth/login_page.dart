@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30))),
                     child: const Text(
-                      "Sing In",
+                      "Sign In",
                       style: TextStyle(color: Colors.white, fontSize: 16),
                     ),
                     onPressed: () {
