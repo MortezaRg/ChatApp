@@ -8,7 +8,7 @@ This project is a chat application and runs on Android and web platforms and is 
 
 ## Getting Started
 
-run this app on simulator or physical devices or web platform and connect with friends.
+run this app on AVD or physical devices or web platform and connect with friends.
 
 for run on web platform use this command : `flutter run -d chrome`
 
